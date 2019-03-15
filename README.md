@@ -1,6 +1,6 @@
 # Git Clone
 
-Git clone by downloading zip and decompressing it
+Git clone by downloading zip and decompressing it, the download speed is greatly improved.
 
 ## Installation
 ```
