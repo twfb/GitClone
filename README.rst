@@ -1,1 +1,1 @@
-https://github.com/dhgdhg/scrapy-chrome/
+https://github.com/dhgdhg/git-clone/

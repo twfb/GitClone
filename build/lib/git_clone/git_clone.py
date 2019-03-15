@@ -2,7 +2,11 @@ import zipfile
 from urllib import request as urllib2
 import os
 import re
-
+headers = {
+    'User-Agent': r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
+    'Connection': 'keep-alive',
+    'Accept-Encoding': 'identity',
+}
 
 def git_clone(git_url, path=os.getcwd(), branch_name='master'):
     username, projectname = re.match(

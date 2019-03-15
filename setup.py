@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='git-clone',
-    version='1.0.0',
+    version='1.0.1',
     description=('Git clone by downloading zip and decompressing it'),
     long_description=open('README.rst').read(),
     author='twfb',
