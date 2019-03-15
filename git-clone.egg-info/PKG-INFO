@@ -1,8 +1,8 @@
 Metadata-Version: 1.2
-Name: scrapy-chrome
-Version: 1.0.2
-Summary: Use Chrome as MiddleWare of Scrapy
-Home-page: https://github.com/dhgdhg/scrapy-chrome/
+Name: git-clone
+Version: 1.0.0
+Summary: Git clone by downloading zip and decompressing it
+Home-page: https://github.com/dhgdhg/git-clone/
 Author: twfb
 Author-email: twfb@hotmail.com
 Maintainer: twfb

@@ -1,10 +1,9 @@
 MANIFEST.in
 README.rst
 setup.py
-scrapy-chrome.egg-info/PKG-INFO
-scrapy-chrome.egg-info/SOURCES.txt
-scrapy-chrome.egg-info/dependency_links.txt
-scrapy-chrome.egg-info/requires.txt
-scrapy-chrome.egg-info/top_level.txt
-scrapy_chrome/__init__.py
-scrapy_chrome/middlewares.py
+git-clone.egg-info/PKG-INFO
+git-clone.egg-info/SOURCES.txt
+git-clone.egg-info/dependency_links.txt
+git-clone.egg-info/top_level.txt
+git_clone/__init__.py
+git_clone/git_clone.py

@@ -1,1 +1,1 @@
-scrapy_chrome
+git_clone
