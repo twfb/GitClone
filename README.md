@@ -1,6 +1,6 @@
-# Scrapy with selenium
+# Git Clone
 
-Scrapy middleware using selenium. Open many tabs to speed up operation
+Git clone by downloading zip and decompressing it
 
 ## Installation
 ```
