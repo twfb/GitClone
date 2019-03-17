@@ -43,7 +43,7 @@ def git_clone(git_url, path=os.getcwd(), branch_name='master'):
     with zipfile.ZipFile(zipfile_name, 'r') as f:
         f.extractall(path + '.')
 
-    os.rename(filename + '-master', filename)
+    os.rename(filename + '-' + branch_name, filename)
     os.remove(zipfile_name)
 
 
