@@ -2,11 +2,17 @@ import zipfile
 import os
 import re
 import sys
-import urllib
+import ssl
+
 try:
+    from urllib.error import URLError
     from urllib import request as urllib2
 except ImportError:
+    from urllib2 import URLError
     import urllib2
+    
+    
+
 headers = {
     'User-Agent':
     r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
@@ -29,22 +35,25 @@ def git_clone(git_url, path=os.getcwd(), branch_name='master'):
     zipfile_name = filename + '.zip'
     try:
         data = urllib2.urlopen(url)
-    except urllib.error.URLError:
+    except URLError:
         headers['Host'] = 'github.com'
         request = urllib2.Request(
             'https://github.com/{}/{}'.format(username, projectname),
             headers=headers)
         response = urllib2.urlopen(request)
+        
         pattern = '/{}/{}/tree/(.*?)/'.format(username, projectname)
         b_name = re.findall(pattern, str(response.read()))[-1]
-        git_clone(git_url, path, b_name)
+        return git_clone(git_url, path, b_name)
+    print('downloading.......')
     with open(zipfile_name, 'wb') as f:
         f.write(data.read())
     with zipfile.ZipFile(zipfile_name, 'r') as f:
-        f.extractall(path + '.')
-
-    os.rename(filename + '-' + branch_name, filename)
+        f.extractall(path + '/.')
+    if os.path.exists(filename + '-' + branch_name):
+        os.rename(filename + '-' + branch_name, filename)
     os.remove(zipfile_name)
+    print('downloaded')
 
 
 def execute():

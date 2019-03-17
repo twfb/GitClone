@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.py
+git_clone/__init__.py
+git_clone/git_clone.py
+git_clone.egg-info/PKG-INFO
+git_clone.egg-info/SOURCES.txt
+git_clone.egg-info/dependency_links.txt
+git_clone.egg-info/entry_points.txt
+git_clone.egg-info/top_level.txt

@@ -1,8 +1,9 @@
-# Git Clone
+# git-clone
 
 Git clone by downloading zip and decompressing it, the download speed is greatly improved.
 
 ## Installation
+python2 need 2.7.9+
 ```
 $ pip install git-clone
 ```
