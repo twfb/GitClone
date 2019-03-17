@@ -1,0 +1,3 @@
+[console_scripts]
+git-clone = git_clone.git_clone:execute
+

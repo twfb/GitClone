@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='git-clone',
-    version='1.0.2',
+    version='1.0.3',
     description=('Git clone by downloading zip and decompressing it'),
     long_description=open('README.rst').read(),
     author='twfb',
@@ -27,4 +27,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Libraries'
-    ],)
+    ],
+    entry_points={
+        'console_scripts': ['git-clone=git_clone.git_clone:execute'],
+    })
