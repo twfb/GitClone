@@ -2,6 +2,8 @@
 
 Git clone by downloading zip and decompressing it, the download speed is greatly improved.
 
+##git clone VS git-clone
+!(demo.gif)
 ## Installation
 python version need 2.7.9+
 ```
