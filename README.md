@@ -1,6 +1,6 @@
 # git-clone
 
-Git clone by downloading zip and decompressing it, the download speed is greatly improved.
+Faster git clone, the download speed is greatly improved.
 
 ## git clone VS git-clone
 ![](demo.gif)
