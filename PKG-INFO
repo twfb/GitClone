@@ -1,0 +1,25 @@
+Metadata-Version: 1.2
+Name: git-clone
+Version: 1.0.6
+Summary: Git clone by downloading zip and decompressing it
+Home-page: https://github.com/dhgdhg/git-clone/
+Author: twfb
+Author-email: twfb@hotmail.com
+Maintainer: twfb
+Maintainer-email: twfb@hotmail.com
+License: BSD License
+Description: https://github.com/dhgdhg/git-clone/
+Platform: all
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
