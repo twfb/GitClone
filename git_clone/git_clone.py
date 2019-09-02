@@ -3,6 +3,9 @@ import os
 import re
 import sys
 import ssl
+import sys
+import time
+
 
 try:
     from urllib.error import URLError
@@ -10,8 +13,7 @@ try:
 except ImportError:
     from urllib2 import URLError
     import urllib2
-    
-    
+
 
 headers = {
     'User-Agent':
@@ -34,26 +36,44 @@ def git_clone(git_url, path=os.getcwd(), branch_name='master'):
     filename = path + '/' + projectname
     zipfile_name = filename + '.zip'
     try:
-        data = urllib2.urlopen(url)
+        urllib2.urlretrieve(url,
+                            zipfile_name, reporthook=report_hook)
     except URLError:
         headers['Host'] = 'github.com'
         request = urllib2.Request(
             'https://github.com/{}/{}'.format(username, projectname),
             headers=headers)
         response = urllib2.urlopen(request)
-        
+
         pattern = '/{}/{}/tree/(.*?)/'.format(username, projectname)
         b_name = re.findall(pattern, str(response.read()))[-1]
         return git_clone(git_url, path, b_name)
-    print('downloading.......')
-    with open(zipfile_name, 'wb') as f:
-        f.write(data.read())
+
     with zipfile.ZipFile(zipfile_name, 'r') as f:
         f.extractall(path + '/.')
     if os.path.exists(filename + '-' + branch_name):
         os.rename(filename + '-' + branch_name, filename)
     os.remove(zipfile_name)
-    print('downloaded')
+    print('\n{} downloaded'.format(git_url))
+
+
+def report_hook(count, block_size, total_size):
+    global start_time
+    if count == 0:
+        start_time = time.time()
+        return
+
+    duration = time.time() - start_time + 0.000001
+    progress_size = int(count * block_size)
+    speed = int(progress_size / (1024 * duration))
+    percent = int(count * block_size * 100 / total_size)
+    if 100 >= percent >= 0:
+        sys.stdout.write("\r{} %, {} KB, {} KB/s, {} seconds passed         " .format(
+            percent, progress_size / 1024, speed, round(duration,2)))
+    else:
+        sys.stdout.write("\r{} KB, {} KB/s, {} seconds passed         " .format(
+            progress_size / 1024, speed, round(duration,2)))
+    sys.stdout.flush()
 
 
 def execute():
