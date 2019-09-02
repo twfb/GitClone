@@ -2,7 +2,7 @@
 
 Faster git clone, the download speed is greatly improved.
 
-## git clone VS git-clone
+## git-clone VS git clone
 ![](vs.gif)
 ## Installation
 python version need 2.7.9+
