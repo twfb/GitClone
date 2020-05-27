@@ -1,5 +1,5 @@
 # git-clone
-Download zip file and extract 
+Git clone by downloading zip and decompressing it
 
 ## Installation
 python version need > 2.7.9
